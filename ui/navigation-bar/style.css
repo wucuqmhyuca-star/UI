@@ -1,0 +1,87 @@
+.menu {
+  /* position: fixed;
+  left: 50%;
+  bottom: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom)); */
+  /* transform: translateX(-50%); */
+  width: calc(100% - 20px);
+  max-width: 520px;
+  backdrop-filter: blur(12px) saturate(180%) contrast(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%) contrast(200%);
+  background: rgba(0, 122, 255, 0.404);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  padding: 8px;
+  border-radius: 99rem;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 50;
+}
+
+.menu::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    inset 2px 2px 5px -2px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 5px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  color: rgba(255, 255, 255, 90%);
+  text-decoration: none;
+  padding: 10px 6px;
+  border-radius: 999rem;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background 0.18s var(--ease-spring),
+    color 0.18s var(--ease-spring),
+    transform 0.18s var(--ease-spring),
+    box-shadow 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  transition:
+    background 0.18s var(--ease-spring),
+    color 0.18s var(--ease-spring),
+    transform 0.18s var(--ease-spring),
+    box-shadow 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 30%);
+  box-shadow:
+    inset 2px 2px 5px -2px rgba(255, 255, 255, 0.4),
+    inset -2px -1px 5px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.2);
+  transform: rotate(2.2);
+  color: rgba(0, 122, 255, 70%);
+}
+
+.menu a svg {
+  width: 1.4rem;
+  font-size: 1.4rem;
+}
+
+.menu a span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.menu a.active {
+  background: rgb(237, 237, 237, 60%);
+  color: rgba(0, 122, 255, 90%);
+}
+
+.menu a:active {
+  transform: scale(0.98);
+}
